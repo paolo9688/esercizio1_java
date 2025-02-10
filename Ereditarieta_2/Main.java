@@ -1,22 +1,32 @@
 package Ereditarieta_2;
 
 class Forma {
-    public float calcolaArea(float dimensione) {
-        return dimensione * dimensione;
+    public void calcolaArea() {
+        System.out.println("Area della forma");
     }
 }
 
 class Rettangolo extends Forma {
-    public float calcolaArea(float lato_min, float lato_max) {
-        float area = lato_max * lato_min;
-        return area;
+    private double base;
+    private double altezza;
+
+    public Rettangolo(double base, double altezza) {
+        this.base = base;
+        this.altezza = altezza;
+    }
+
+    @Override
+    public void calcolaArea() {
+        double area = base * altezza;
+        System.out.println("Area del rettangolo: " + area);
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Rettangolo rettangolo = new Rettangolo();
-        float area = rettangolo.calcolaArea(6, 8);
-        System.out.println(area);
+        Forma formaGenerica = new Forma();
+        formaGenerica.calcolaArea();
+        Rettangolo rettangolo = new Rettangolo(5, 10);
+        rettangolo.calcolaArea();
     }
 }
