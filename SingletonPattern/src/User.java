@@ -1,12 +1,20 @@
 package SingletonPattern.src;
 
 public class User {
+    private static User instance;
     private String name;
     private int age;
 
-    private User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    private User() {
+        this.name = "Mario";
+        this.age = 25;
+    }
+
+    public static User getInstance(String name, int age) {
+        if (instance == null) {
+            instance = new User();
+        }
+        return instance;
     }
 
     public String getName() {
