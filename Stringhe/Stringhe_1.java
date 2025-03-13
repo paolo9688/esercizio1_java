@@ -39,5 +39,6 @@ public class Stringhe_1 {
         Confronto primoConfronto = new Confronto(primaStringa, secondaStringa);
         String esitoConfronto = primoConfronto.confronto();
         System.out.println(esitoConfronto);
+        scanner.close();
     }
 }
